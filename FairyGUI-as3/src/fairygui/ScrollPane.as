@@ -459,7 +459,7 @@ package fairygui
 			var rect:Rectangle;
 			if(target is GObject)
 			{
-				if (target.parent != _owner)
+				if (target.parent != _owner && target.parent != null)
 				{
 					GObject(target).parent.localToGlobalRect(target.x, target.y, 
 						target.width, target.height, sHelperRect);

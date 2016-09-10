@@ -1110,12 +1110,14 @@ package fairygui
 				this.mask = getChildById(str).displayObject;
 			
 			this.relations.setup(xml);
+			this.bindings.setup(xml);
 			
 			var cnt:int = _children.length;
 			for(var i:int=0;i<cnt;i++)
 			{
 				u = _children[i];
 				u.relations.setup(u._constructingData);
+				u.bindings.setup(xml);
 			}
 			
 			for(i=0;i<cnt;i++)
