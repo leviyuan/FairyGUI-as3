@@ -58,7 +58,6 @@ package fairygui
 		private var _pixelSnapping:Boolean;
 		
 		private var _relations:Relations;
-		private var _bindings:Bindings;
 		private var _group:GGroup;
 		private var _gearDisplay:GearDisplay;
 		private var _gearXY:GearXY;
@@ -117,7 +116,6 @@ package fairygui
 			createDisplayObject();
 			
 			_relations = new Relations(this);
-			_bindings = new Bindings(this);
 			_dispatcher = new SimpleDispatcher();
 			
 			_gearDisplay = new GearDisplay(this);
@@ -747,21 +745,6 @@ package fairygui
 			_relations.remove(target, relationType);
 		}
 		
-		final public function get bindings():Bindings
-		{
-			return _bindings;
-		}
-		
-		final public function addBinding(target:GObject, property:String, flag:String):void
-		{
-			_bindings.add(target, property, flag);
-		}
-		
-		final public function removeBinding(target:GObject, property:String):void
-		{
-			_bindings.remove(target, property);
-		}
-		
 		final public function get displayObject():DisplayObject
 		{
 			return _displayObject;
@@ -886,7 +869,6 @@ package fairygui
 		{
 			removeFromParent();
 			_relations.dispose();
-			_bindings.dispose();
 		}
 
 		public function addClickListener(listener:Function):void
